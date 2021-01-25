@@ -1,3 +1,5 @@
+
+  
 //チームドライブの一覧を取得する（ID含む）
 function listAllTeamDriveRoles(){
   //変数の宣言
@@ -34,7 +36,7 @@ function listAllTeamDriveRoles(){
             cols.push(permission.emailAddress);
             cols.push(permission.role);
             rows.push(cols);
-            sheet.getRange(1, 1, rows.length, 4).setValues(rows);
+          //  sheet.getRange(1, 1, rows.length, 4).setValues(rows);
     }
  
     //次のページのpageTokenを取得する
@@ -45,6 +47,7 @@ function listAllTeamDriveRoles(){
     pageToken = teamDrives.nextPageToken
   }while(pageToken)
   //チームドライブ一覧表示
+              sheet.getRange(1, 1, rows.length, 4).setValues(rows);
 }
 
 
